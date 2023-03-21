@@ -1,3 +1,15 @@
+<?php
+include './functions.php';
+
+$password = '';
+if (isset($_GET['pswLenght'])) {
+    $pswLenght = $_GET['pswLenght'];
+    if ($pswLenght > 0) {
+        $password = generate_password($pswLenght);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +39,6 @@
                 <h1 class="text-center">Password generata</h1>
                 <p class="text-center">La tua password è:
                     <?php 
-                        include './functions.php';
                     if (isset($password)) {
                         echo $password;
                     } ?>
@@ -39,4 +50,5 @@
                     background-color: #000;
                     color: #fff;
                 }
+
             </style>
