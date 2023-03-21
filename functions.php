@@ -41,4 +41,5 @@ function generate_password($pswLenght)
     form {
         display: flex;
         justify-content: center;
+    }
 </style>
