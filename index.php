@@ -29,7 +29,7 @@
             $password = "";
             $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
             for ($i = 0; $i < $pswLenght; $i++) {
-                $password =
+            $password .= $characters[rand(0, strlen($characters))];
             }
         }
 
@@ -39,7 +39,9 @@
             <div class="col-md-12">
                 <h1 class="text-center">Password generata</h1>
                 <p class="text-center">La tua password è:
-                    <?php if(isset ($password)); ?>
+                    <?php if (isset ($password)) {
+                        echo $password;
+                    }?>
                 </p>
             </div>
 
