@@ -16,31 +16,19 @@
                 <h1 class="text-center">Generatore di password</h1>
                 <p class="text-center">Inserisci la lunghezza della password desiderata</p>
                 <form action="./index.php" class="text-center" method="GET" class="d-flex align-items-center">
-                    <input type="number" name="pswLenght" id="" min="2"
-                        placeholder="Inserisci la lunghezza della password desiderata">
+                    <input type="number" name="pswLenght" id="" min="2" placeholder="Inserisci la lunghezza della password desiderata">
                     <input type="submit" value="Genera password">
                 </form>
             </div>
         </div>
 
-        <?php
-        if (isset($_GET['pswLenght'])) {
-            $pswLenght = $_GET['pswLenght'];
-            $password = "";
-            $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
-            $lenght = strlen($characters) - 1;
-            for ($i = 0; $i < $pswLenght; $i++) {
-                $password .= $characters[rand(0, $lenght)];
-            }
-        }
-
-        ?>
-
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center">Password generata</h1>
                 <p class="text-center">La tua password è:
-                    <?php if (isset($password)) {
+                    <?php 
+                        include './functions.php';
+                    if (isset($password)) {
                         echo $password;
                     } ?>
                 </p>
@@ -78,11 +66,4 @@
                 form {
                     display: flex;
                     justify-content: center;
-                    align-items: center;
-                }
             </style>
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</body>
-
-</html>
