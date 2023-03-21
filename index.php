@@ -40,7 +40,7 @@ if (isset($_GET['pswLenght'])) {
                 <p class="text-center">La tua password è:
                     <?php 
                     if (isset($password)) {
-                        echo $password;
+                        echo "<strong>" . $password . "</strong>";
                     } ?>
                 </p>
             </div>
